@@ -16,6 +16,13 @@
   3. 手机 **SFTP 直连 Kindle**（不需要电脑）
 - **可复用**：全部脚本 + 离线包 + 排障文档封装为 skill
 
+## 🤖 让 agent 帮你做（复制即用）
+
+把下面这行原封不动复制给任意编码 agent（Claude Code / Cursor / Codex / DSH 等），它会读取 skill、主动向你提问并分阶段执行，**你不需要修改这段文字**：
+
+```text
+帮我按这个 skill 改造 Kindle：https://github.com/kulebbb/Liang-Kindle-break/blob/main/skill/kindle-jailbreak/SKILL.md —— 目标是把 Kindle 越狱、装 KOReader、配置微信读书和 Wi-Fi 传书。先读 SKILL.md 和 references/，再问我设备信息和数据线情况，然后分阶段执行、每步向我确认；风险操作先说明回退方案，全程中文。
+```
 ## 目录结构
 
 ```
