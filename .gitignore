@@ -1,0 +1,27 @@
+# 密钥与个人配置
+phone_sftp_key.pem
+tools/keys/
+tools/kindle-config.json
+skill/kindle-jailbreak/scripts/kindle-config.json
+skill/kindle-jailbreak/scripts/authorized_keys
+**/authorized_keys
+
+# 运行时数据
+library/*
+!library/.gitkeep
+logs/
+*.log
+__pycache__/
+*.pyc
+
+# 生成的归档
+kindle-jailbreak-skill.zip
+
+# 安装包缓存（skill/assets 已包含，避免重复）
+downloads/
+
+# 系统/编辑器
+Thumbs.db
+.DS_Store
+.idea/
+.vscode/

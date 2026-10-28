@@ -1,0 +1,11 @@
+{
+  "kindle_ip": "",
+  "ssh_port": 2222,
+  "ssh_user": "root",
+  "ssh_key": "",
+  "remote_dir": "/mnt/us/documents/books",
+  "http_port": 8765,
+  "auto_push": true,
+  "watch_library": true,
+  "weread_api_key": ""
+}
