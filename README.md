@@ -9,6 +9,7 @@
 
 - **越狱**：WinterBreak2（浏览器漏洞，支持 5.6.1.1–5.16.3，无需注册 Amazon）
 - **阅读器**：KOReader 2026.07.1（离线安装，书库一键启动）
+- **统一版式**：用 Profiles 让每本书打开时自动套用同一套字号/行距/页边距（`skill/kindle-jailbreak/scripts/Install-KoreaderProfile.ps1`）
 - **微信读书**：weread.koplugin v1.6.0，书架/下载/进度同步可用；含上游 401 bug 的 Cookie 绕行方案
 - **传书三件套**：
   1. `Bookdrop` 电脑网页拖拽 → Wi-Fi 自动推送
@@ -64,6 +65,8 @@ Copy-Item kindle-config.template.json kindle-config.json   # 可选
 .\Weread-Login.ps1              # 6. 微信读书 401 绕行登录（浏览器扫码）
 .\Start-Bookdrop.cmd            # 7. 启动传书网页
 ```
+
+> 可选：`skill\kindle-jailbreak\scripts\Install-KoreaderProfile.ps1` 创建「统一版式」Profile 并自动套用（需先退出 KOReader、插 USB）。
 
 完整步骤、风险与回退见 [skill/kindle-jailbreak/SKILL.md](skill/kindle-jailbreak/SKILL.md)。
 

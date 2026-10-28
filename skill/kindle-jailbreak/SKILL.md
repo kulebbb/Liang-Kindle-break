@@ -27,6 +27,8 @@ kindle-jailbreak/
 │   ├── Setup-KindleSsh.ps1         生成 SSH 密钥并写配置
 │   ├── Kindle-Push.ps1             命令行 Wi-Fi 推书
 │   ├── Weread-Login.ps1            微信读书 401 绕行登录助手
+│   ├── Install-KoreaderProfile.ps1  统一版式 Profile（自动套用字号/边距）
+│   ├── patch_koreader_profile.py    生成 profiles.lua / 改 settings.reader.lua
 │   ├── bookdrop.py                 Bookdrop 服务（网页拖拽 + 自动推送 + 二维码地址同步）
 │   ├── Start-Bookdrop.cmd          双击启动 Bookdrop
 │   ├── cdp_cookies.py              从浏览器读 Cookie
@@ -36,7 +38,7 @@ kindle-jailbreak/
 │   ├── plugins/bookdrop.koplugin/  Kindle 端「传书二维码」插件
 │   └── tests/                      mock Kindle 端到端测试
 ├── assets/                     越狱包与安装包（见 assets/README.md）
-├── references/                 详细文档（越狱/安装/微信读书/传书/排障/设备档案）
+├── references/                 详细文档（越狱/安装/微信读书/传书/排障/设备档案/版式）
 └── library/                    Bookdrop 待推送目录（运行时生成）
 ```
 
@@ -85,6 +87,19 @@ Copy-Item kindle-config.template.json kindle-config.json   # 可选，脚本会�
 
 会解压官方 `koreader-kindlepw2` 包，并在 `documents/` 生成名为 KOReader 的启动条目（scriptlet）。
 点它启动；首次进入会问语言。详见 `references/02-koreader-install.md`。
+
+### 统一版式（可选，推荐）
+
+想让每本书打开时自动套用同一套字号/行距/页边距（KOReader 默认按书保存）：
+
+```powershell
+# 先退出 KOReader，插 USB 后运行：
+.\Install-KoreaderProfile.ps1
+```
+
+会创建 Profile「统一版式」并挂到 `ReaderReady` 自动执行；参数可改
+（`-FontSize/-LineSpacing/-HMargin/-TopMargin/-BottomMargin`）。
+细节与回滚见 `references/07-koreader-default-typography.md`。
 
 ## 3. 微信读书
 
